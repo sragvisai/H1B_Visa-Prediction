@@ -2,7 +2,9 @@
 
 Steps to run :
 Run the Trial.py using the following command: uvicorn Trial:app --reload
+
 Run the server file inside the UI/Server/ using the command : node server.js
+
 Now open the agentForm and try submitting it.
 
 To Do :
