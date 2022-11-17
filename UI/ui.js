@@ -7,14 +7,14 @@ var handleSubmit = function () {
 
     var title = document.getElementById("Role").value;
     inputData.push(title);
-    var fullTime = document.querySelector('.fullTime:checked').value;
-    inputData.push(fullTime);
+    // var fullTime = document.querySelector('.fullTime:checked').value;
+    // inputData.push(fullTime);
     var workerPos = document.getElementById("workerPositions").value;
     inputData.push(workerPos);
     inputData.push(document.querySelector('.newEmp:checked').value);
     inputData.push(document.querySelector('.continueEmp:checked').value);
     inputData.push(document.querySelector('.change:checked').value);
-    //inputData.push(document.querySelector('.concurrent:checked').value);
+    //inputData.push(document.querySelector('.concurrentEmp:checked').value);
     inputData.push(document.querySelector('.changeEmp:checked').value);
     inputData.push(document.querySelector('.petition:checked').value);
     inputData.push(document.getElementById('employer').value);
@@ -43,18 +43,22 @@ var handleSubmit = function () {
     console.log("URL "+url);
     fetch(url,{
         })
-    .then(response => {
-        console.log("Response "+JSON.stringify(response));
-    })
+    .then(response => response.json())
     .then(data =>{
-        console.log("DATA in UI" + JSON.stringify(data));
-        document.getElementById("agentForm").style.display="none";
-        if(data == "0"){
-            document.getElementById("outcome").innerHTML = "Denied";
-        } 
-        else{
+        console.log(data);
+        console.log("Data "+JSON.stringify(data));
+        console.log("Type "+typeof(data));
+        data = JSON.parse(data);
+        let outcome = data["outcome"];
+
+        document.getElementById("agentForm").style.display = 'none';
+        document.getElementById("outcome").style.display = "block";
+        
+        if(outcome == "0"){
             document.getElementById("outcome").innerHTML = "Approved";
         }
+        else
+            document.getElementById("outcome").innerHTML = "Denied";
     })      
 };
 
