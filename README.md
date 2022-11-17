@@ -9,8 +9,8 @@ To Do :
 1. Employee form
 2. Navigation between the pages.
 3. Login Module with encryption -> Need a database?
-
+4. Static checks
 
 Issues :
-1. Always getting the approved message.-> Because we are getting undefined from the server.js
-2. An error is getting logged in the python console for the Trial.py
+1. Always getting the approved message.-> Because we are getting undefined from the server.js -> Resolved
+2. An error is getting logged in the python console for the Trial.py -> not seeing now
