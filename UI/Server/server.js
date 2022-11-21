@@ -2,7 +2,16 @@
 import fetch from "node-fetch";
 import express from 'express';
 
+//mongoDB realted stuff
+import { MongoClient, ServerApiVersion } from 'mongodb';
+//import { MongoClient } from 'mongodb';
+const uri = "mongodb+srv://admin:Admin@cluster0.20rd07g.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+
 const app = express();
+
+
 const port = 9000;
 
 //cors
@@ -24,6 +33,67 @@ app.get('/server', function(req, response) {
             console.log("Data "+data);
             response.json(data);
     });
+  });
+
+  app.get('/validateUser',function(req,response){
+    let params = req.query.inputData;
+    params = params.split(',');
+    let userName = params[0];
+    let password = params[1];
+    let existingUsers = [];
+    console.log("Inside the validateUser server "+JSON.stringify(params));
+    client.connect(err => {
+        const collection = client.db("LoginCreds").collection("Users");
+        
+        //check if user exists
+        collection.distinct('userName').then((data) => {
+            if(data.includes(userName)){
+                collection.findOne({userName : userName})
+            .then((data) =>{
+                console.log("Found");
+                console.log("ERROR "+JSON.stringify(data));
+                console.log("Password "+JSON.stringify(data.password));
+                if(data.password != password){
+                    response.json("Invalid");
+                }
+                else
+                    response.json("Valid");
+                })
+            }
+            else
+                response.json("Invalid");
+        });        
+        setTimeout(() => {client.close()}, 1500)
+      });
+  });
+
+  app.get('/addUser',function(req,response){
+
+        let params = req.query.inputData;
+        params = params.split(',');
+        let userName = params[0];
+        let password = params[1];
+        console.log("Inside the addUser server "+userName+" "+password);
+        client.connect(err => {
+            const connection = client.db("LoginCreds").collection("Users");
+
+            //check if user already exists
+            connection.distinct('userName')
+            .then((data)=>{
+
+                if(data.includes(userName)){
+                    response.json("alreadyExists");
+                }
+                else{
+                    connection.insertOne({ userName: userName, password: password }).then( (res) => {
+                        console.log("Added user successfully");
+                        response.json("succ");
+                    });
+                }
+            })
+
+            setTimeout(() => {client.close()}, 1500);
+        })
   });
 
 app.listen(port);
