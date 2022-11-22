@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <link href="agentStyle.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+
+        
+        <form onsubmit="handleSubmit()" id="agentForm">
+
+            <p> Please enter your role :
+                <input type="text" id="Role">
+            </p>
+
+            <!-- <p>
+                Is it a full time position ?
+                <input type="checkbox" value="Y" id="fulltimeYes" class="fullTime" name="fullTime">
+                <label for="fulltimeYes">Yes</label>   
+                <input type="checkbox" value="N" id="fulltimeNo" class="fullTime" name="fullTime">                
+                <label for="fulltimeNo">No</label>
+            </p> -->
+
+            <p>
+                Enter the total number of worker positions
+                <input type="text" id="workerPositions">
+            </p>
+            <p>
+                Is it a new Emplpoyemnt ?
+                <input type="checkbox" value="1" id="newEmpYes" class="newEmp">
+                <label for="newEmpYes">Yes</label>   
+                <input type="checkbox" value="0" id="newEmpNo" class="newEmp">                
+                <label for="newEmpNo">No</label>
+            </p>
+
+            <p>
+                Please enter if its a continue Emplpoyemnt ?
+                <input type="radio" value="1"  class="continueEmp" name="continue">
+                <label for="conYes">Yes</label>   
+                <input type="radio" value="0" class="continueEmp" name="continue">                
+                <label for="conNo">No</label>
+            </p>
+
+            <p>
+                Please enter if its a change of previous emplpoyemnt ?
+                <input type="radio" value="1"  class="change" name="change">
+                <label>Yes</label>   
+                <input type="radio" value="0"  class="change" name="change">                
+                <label>No</label>
+            </p>
+            
+            <p>
+                Please enter if its a new concurrent employement ?
+                <input type="radio" value="1" class="concurrentEmp" name="concurrent">
+                <label>Yes</label>   
+                <input type="radio" value="0" class="concurrentEmp" name="concurrent">                
+                <label>No</label>
+            </p>
+
+            <p>
+                Please enter if its a change of employer ?
+                <input type="radio" value="1" class="changeEmp" name="changeEmp">
+                <label>Yes</label>   
+                <input type="radio" value="0" class="changeEmp" name="changeEmp">                
+                <label>No</label>
+            </p>
+
+            <p>
+                Please enter if its a ammended petition ?
+                <input type="radio" value="1" class="petition" name="petition">
+                <label>Yes</label>   
+                <input type="radio" value="0" class="petition" name="petition">                
+                <label>No</label>
+            </p>
+
+            <p>
+                Is an agent representing an employer ?
+                <input type = "radio" value = "1" class="agent" name="agent">
+                <label> Yes</label>
+                <input type="radio" value = "0" class="agent" name="agent">
+                <label>No</label>
+            </p>
+
+            <p>
+                Secondary Entity ?
+                <input type = "radio" value = "1" class="entity" name="entity">
+                <label> Yes</label>
+                <input type="radio" value = "0" class="entity" name="entity">
+                <label>No</label>
+            </p>
+
+            <p>
+                Please enter your Employer Name :
+                <input type="text" id="employer">
+            </p>
+
+            <p>
+                Enter your salary
+                <input type="text" id="salary">
+            </p>
+            <p>
+                Enter your salary unit of pay
+                <input type="text" id="salaryUnit">
+            </p>
+            <p>
+                Enter the Prevailing wage :
+                <input type="text" id="prevailing">
+            </p>
+            <p>
+                Enter the prevailing unit of pay :
+                <input type="text" id="prevailingUnit">
+            </p>
+            
+            <p>
+                Total Worksite Locations :
+                <input type="text" id="worksiteLocations">
+            </p>
+            
+            <p>
+                Do you agree to LC statement :
+                <input type="radio" class="lc" name="lc" value="Yes">
+                <label>Yes</label>
+                <input type="radio" class="lc" name="lc" value="No">
+                <label>No</label>
+            </p>
+            
+            <p>
+                Do you have h1b_dependent
+                <input type = "radio" class="h1b_dep" name="h1b_dep" value="Yes">
+                <label>Yes</label>
+                <input type = "radio" class="h1b_dep" name="h1b_dep" value="No">
+                <label>No</label>
+            </p>
+
+            <p>
+                Are you a willful violator
+                <input type = "radio" class="violator" name="violator" value="Yes">
+                <label>Yes</label>
+                <input type = "radio" class="violator" name="violator" value="No">
+                <label>No</label>
+            </p>
+
+            <p>
+                Support H1-B
+                <input type = "radio" class="suport" name="support" value="Yes">
+                <label>Yes</label>
+                <input type = "radio" class="support" name="support" value="No">
+                <label>No</label>
+            </p>
+
+            <p>
+                Satutory Basis :
+                <input type="text" id="basis">
+            </p>
+
+            <p>
+                <input type="submit" id="submit">
+            </p>
+            
+        </form>
+
+        <p id="outcome">
+
+        </p>
+
+        <a href="/selection">
+            <button id="back">BACK</button>
+        </a>
+
+    </div>
+        <script src="ui.js"></script>
+    </body>
+</html>

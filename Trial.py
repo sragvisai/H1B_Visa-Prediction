@@ -51,22 +51,3 @@ def firstFunction():
 
 if __name__ == "__main__":
     firstFunction()
-     # Load model
-    # encoder = OrdinalEncoder()
-    # #print(encoder.feature_names_in_)
-    # # with open('pickel.model', 'rb') as f:
-    # #     model = pickle.load(f)
-
-    # with open('encoder2.pickle', 'rb') as f:
-    #     encoder = pickle.load(f)
-
-    # print(len(encoder.categories_))
-    # inputData = ['Software Developer','1','1','0','0','0','0','Google LLC','Yes','Yes','120000','Year','100000','Year','10','Yes','Yes','$60,000 or higher annual wage']
-    # inputData= np.asarray(inputData)
-    # inputData = inputData.reshape(1,-1)
-    # print(inputData)
-    # inputData = encoder.transform(inputData)
-    # print(encoder.inverse_transform(inputData)[0])
-    
-    # print("Model " +model)
-    # print("Encode "+encoder)

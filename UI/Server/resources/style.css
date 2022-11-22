@@ -1,0 +1,20 @@
+#forms {
+    display: none;
+}
+
+#loginPage {
+    display: none;
+}
+
+#register {
+    display: none;
+}
+
+.errors {
+    color: red;
+    display: none;
+}
+
+.selection {
+    display: none;
+}

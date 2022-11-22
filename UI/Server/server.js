@@ -10,7 +10,9 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 
 const app = express();
-
+// View engine setup
+app.set('view engine', 'ejs');
+app.use(express.static('resources'));
 
 const port = 9000;
 
@@ -95,6 +97,27 @@ app.get('/server', function(req, response) {
             setTimeout(() => {client.close()}, 1500);
         })
   });
+
+  //get the employee form
+  app.get('/employeeForm' , function(req,response){
+
+        response.render('employeeForm');
+  })
+
+  //get the employer form
+  app.get('/agentForm',function(req,response){
+
+        response.render('agentForm')
+  });
+
+  //login page
+  app.get('/',function(req,response){
+    response.render('login');
+  })
+
+  app.get('/selection',function(req,response){
+    response.render('selection');
+  })
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);

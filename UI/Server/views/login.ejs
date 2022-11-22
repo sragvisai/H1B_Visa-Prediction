@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div id ="initialLogin">
+            <button onclick ="loadLogin()">Login</button>
+            <button onclick ="loadRegister()">Register</button>
+        </div>
+        <div id="forms">
+            <form onsubmit="validateUser()" id="loginPage" class="login">
+
+                <p>
+                    Enter your username :
+                    <input type="text" id="userName">
+                </p>
+    
+                <p>
+                  Password:
+                  <input type="text" id="password">  
+                </p>
+
+                <input type="submit">
+    
+            </form>
+
+            <form onsubmit="addUser()" id="register" class="register">
+                <p>Enter your name :
+                    <input type="text" id="usernameR">
+                </p>
+
+                <p>
+                    Password :
+                    <input type="text" id="passwordR">
+                </p>
+
+                <p>
+                    Retype Password :
+                    <input type="text" id="reTypeR">
+                </p>
+
+                <input type="submit">
+
+            </form>
+                
+            <button onclick="backToLogin()">
+                BACK</button>
+        </div>
+
+        <div class="errorsRegion">
+            <p class="errors" id="errors">
+            </p>
+        </div>
+        
+        <script src="login.js"></script>
+    </body>
+</html>

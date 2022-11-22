@@ -21,10 +21,6 @@
                   <input type="text" id="password">  
                 </p>
 
-                <p class="errors" id="errorText">
-                    Invalid username or password!
-                </p>
-    
                 <input type="submit">
     
             </form>
@@ -44,14 +40,25 @@
                     <input type="text" id="reTypeR">
                 </p>
 
-                <p id ="errorTextReg" class="errors">
-                    This user already exists!!!!
-                </p>
-
                 <input type="submit">
             </form>
         </div>
-       
+
+        <p class="errors" id="errors">
+        </p>
+
+        <div id="selection" class = "selection">
+            <p>
+            <a href="/agentForm" onclick="loadAgentForm()"> AgentForm
+            </a>
+        </p>
+            <a href="#/employerForm" onclick="loadEmpForm()">Employer Form</a>
+
+        </div>
+
+        <button onclick="window.history.back()">
+            BACK</button>
+
         <script src="login.js"></script>
     </body>
 </html>
