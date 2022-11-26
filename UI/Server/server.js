@@ -119,5 +119,11 @@ app.get('/server', function(req, response) {
     response.render('selection');
   })
 
+  app.get('/register',function(req,response){
+    response.render('register');
+  });
+
+  
+
 app.listen(port);
 console.log('Server started at http://localhost:' + port);

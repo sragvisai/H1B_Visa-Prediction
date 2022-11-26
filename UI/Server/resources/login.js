@@ -6,13 +6,6 @@ const loadLogin = () => {
         document.getElementById("register").style.display = "none";
 }
 
-const loadRegister = () => {
-        document.getElementById("initialLogin").style.display="none";
-        document.getElementById("forms").style.display = "block";
-        document.getElementById("register").style.display = "block";
-        document.getElementById("loginPage").style.display = "none";
-}
-
 const clearForm = (isRegister) => {
         if(isRegister){
                 document.getElementById("usernameR").innerHTML= "";
@@ -46,11 +39,6 @@ const displayErrorText = (isLogin) =>{
         
         document.getElementById("errors").style.display = "block";
 
-        if(isLogin)
-                document.getElementById("errors").innerHTML="Account already exists";
-        else
-                document.getElementById("errors").style.display = "Invalid username or passsword";
-
 }
 
 //allow the user to choose between the agent Form and Employer form
@@ -78,69 +66,22 @@ const validateUser = () =>{
                 console.log("Data "+data);
 
                 if(data === "Invalid"){
-                        clearForm();
                         displayErrorText(false);
                 }
                 else{
-                        clearForm();
                         //alert("You are a valid user");
                         displaySelection();    
                 }
             })
 }
 
-const addUser = () =>{
-
-        let userName = document.getElementById("usernameR").value;
-        let password = document.getElementById("passwordR").value;
-        let retypedPassword = document.getElementById("reTypeR").value;
-
-        console.log("Here "+userName +" "+password+" "+retypedPassword);
-
-        if(password != retypedPassword){
-                alert("Passwords do not match");
-                clearForm(true);
-        }
-        else{
-                let inputData = [];
-                inputData.push(userName);
-                inputData.push(password);
-                var url = new URL("http://localhost:9000/addUser");
-                url.search = new URLSearchParams({inputData : inputData });
-                url = url.toString();
-                console.log("URL "+url);
-                fetch(url,{
-                    })
-                    .then(response => response.json())
-                    .then(data =>{
-                        console.log("Data "+data);
-
-                        if(data === "alreadyExists")
-                        {
-                                console.log("User Exists");
-                                clearForm(true);
-                                displayErrorText(true);
-                        }
-                        else{
-                                clearForm(true);
-                                //displaySuccessText(true);
-                                displaySelection();  
-                                alert("You have successfully been added");
-                        }
-                    })
-        }
-}
-
 var initializor = function () {
-        var form = document.getElementById("loginPage");
-        var regForm = document.getElementById("register");
+        var form = document.getElementById("stripe-login");
         function handleForm(event) {
             event.preventDefault();
         }
         if (form)
             form.addEventListener('submit', handleForm);
-        if(regForm)
-        regForm.addEventListener('submit',handleForm);
 };
     
 initializor();

@@ -1,15 +1,48 @@
 <html>
-    <body>
-        <div id="selection" class = "selection">
-            <p>
-                <a href="/agentForm"> AgentForm</a>
-            </p>
-            <p>
-                <a href="/employerForm">Employer Form</a>
-            </p>
-            <a href="/">
-                <button>BACK</button>
-            </a>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="selectionStyle.css">
+</head>
+
+<body>
+
+    <div id="info">Observe the platform icon's motion direction when there is up and down hover on options.</div>
+
+    <form id="app-cover">
+      <div id="select-box">
+        <input type="checkbox" id="options-view-button">
+        <div id="select-button" class="brd">
+          <div id="selected-value">
+            <span>Select a platform</span>
+          </div>
+          <div id="chevrons">
+            <i class="fas fa-chevron-up"></i>
+            <i class="fas fa-chevron-down"></i>
+          </div>
         </div>
-    </body>
+        <div id="options">
+          <div class="option">
+            <input class="s-c top" type="radio" name="platform" value="codepen">
+            <input class="s-c bottom" type="radio" name="platform" value="codepen">
+            <i class="fab fa-codepen"></i>
+            <span class="label">Agent</span>
+            <span class="opt-val">Agent</span>
+          </div>
+          <div class="option">
+            <input class="s-c top" type="radio" name="platform" value="dribbble">
+            <input class="s-c bottom" type="radio" name="platform" value="dribbble">
+            <i class="fab fa-dribbble"></i>
+            <span class="label">Employee</span>
+            <span class="opt-val">Employee</span>
+          </div>
+          <div id="option-bg"></div>
+        </div>
+        <div >
+            <input type="submit" value="Continue" class="submit">
+        </div>
+        
+      </div>
+    </form>
+</body>
+
 </html>
