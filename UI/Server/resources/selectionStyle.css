@@ -405,11 +405,33 @@
   .submit{
     margin-top: 56%;
     padding: 10px;
-    color: #2d3667;
-    font-size: 16px;
-    font-family: monospace;
-    background-color: #05f9de21;
-    border: #0a9af9 solid 1px;
     margin-left: 31%;
+    font-size: medium;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: 600;
   }
   
+
+ option {
+    text-align: left;
+    font-size: medium;
+    font-family: system-ui;
+    font-weight: 600;
+ }
+
+ .select-box{
+  text-align: center;
+  margin-top: 20px;
+ }
+
+ select {
+  padding-left: 10px;
+  padding-right: 29px;
+  padding-top: 11px;
+  padding-bottom: 14px;
+  font-size: medium;
+  text-align: center;
+  font-family: system-ui;
+  font-weight: 600;
+ }

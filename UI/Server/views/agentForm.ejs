@@ -8,10 +8,13 @@
         
         <form onsubmit="handleSubmit()" id="agentForm">
 
-            <p> Please enter your role :
-                <input type="text" id="Role">
-            </p>
-
+        <div class="inputField">
+            
+            <span> Please enter your role :</span>
+                <div data-tooltip="Some info">
+                <input type="text" id="Role" placeholder="Your role..">
+            </div>
+        </div>
             <!-- <p>
                 Is it a full time position ?
                 <input type="checkbox" value="Y" id="fulltimeYes" class="fullTime" name="fullTime">
@@ -20,74 +23,101 @@
                 <label for="fulltimeNo">No</label>
             </p> -->
 
-            <p>
-                Enter the total number of worker positions
-                <input type="text" id="workerPositions">
-            </p>
-            <p>
-                Is it a new Emplpoyemnt ?
-                <input type="checkbox" value="1" id="newEmpYes" class="newEmp">
-                <label for="newEmpYes">Yes</label>   
-                <input type="checkbox" value="0" id="newEmpNo" class="newEmp">                
-                <label for="newEmpNo">No</label>
-            </p>
-
-            <p>
-                Please enter if its a continue Emplpoyemnt ?
-                <input type="radio" value="1"  class="continueEmp" name="continue">
-                <label for="conYes">Yes</label>   
-                <input type="radio" value="0" class="continueEmp" name="continue">                
-                <label for="conNo">No</label>
-            </p>
-
-            <p>
-                Please enter if its a change of previous emplpoyemnt ?
-                <input type="radio" value="1"  class="change" name="change">
-                <label>Yes</label>   
-                <input type="radio" value="0"  class="change" name="change">                
-                <label>No</label>
-            </p>
+            <div class="inputField">
             
-            <p>
-                Please enter if its a new concurrent employement ?
-                <input type="radio" value="1" class="concurrentEmp" name="concurrent">
-                <label>Yes</label>   
-                <input type="radio" value="0" class="concurrentEmp" name="concurrent">                
-                <label>No</label>
-            </p>
+                <span> Enter the total number of worker positions</span>
+                    <div data-tooltip="Some info">
+                        <input type="text" id="workerPositions">
+                </div>
+            </div>
 
-            <p>
-                Please enter if its a change of employer ?
-                <input type="radio" value="1" class="changeEmp" name="changeEmp">
-                <label>Yes</label>   
-                <input type="radio" value="0" class="changeEmp" name="changeEmp">                
-                <label>No</label>
-            </p>
+            <div class="inputField">
+            
+                <span>  Is it a new Emplpoyemnt ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1" id="newEmpYes" class="newEmp">
+                        <label for="newEmpYes">Yes</label>   
+                        <input type="radio" value="0" id="newEmpNo" class="newEmp">                
+                        <label for="newEmpNo">No</label>
+                </div>
+            </div>
 
-            <p>
-                Please enter if its a ammended petition ?
-                <input type="radio" value="1" class="petition" name="petition">
-                <label>Yes</label>   
-                <input type="radio" value="0" class="petition" name="petition">                
-                <label>No</label>
-            </p>
+            <div class="inputField">
+            
+                <span>  Please enter if its a continue Emplpoyemnt ? </span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1"  class="continueEmp" name="continue">
+                        <label for="conYes">Yes</label>   
+                        <input type="radio" value="0" class="continueEmp" name="continue">                
+                        <label for="conNo">No</label>
+                </div>
+            </div>
 
-            <p>
-                Is an agent representing an employer ?
-                <input type = "radio" value = "1" class="agent" name="agent">
-                <label> Yes</label>
-                <input type="radio" value = "0" class="agent" name="agent">
-                <label>No</label>
-            </p>
+            <div class="inputField">
+            
+                <span>  Please enter if its a change of previous emplpoyemnt ? </span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1"  class="change" name="change">
+                        <label>Yes</label>   
+                        <input type="radio" value="0"  class="change" name="change">                
+                        <label>No</label>
+                </div>
+            </div>
 
-            <p>
-                Secondary Entity ?
-                <input type = "radio" value = "1" class="entity" name="entity">
-                <label> Yes</label>
-                <input type="radio" value = "0" class="entity" name="entity">
-                <label>No</label>
-            </p>
+            <div class="inputField">
+            
+                <span>   Please enter if its a new concurrent employement ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1" class="concurrentEmp" name="concurrent">
+                        <label>Yes</label>   
+                        <input type="radio" value="0" class="concurrentEmp" name="concurrent">                
+                        <label>No</label>
+                </div>
+            </div>
 
+            <div class="inputField">
+            
+                <span>   Please enter if its a change of employer ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1" class="changeEmp" name="changeEmp">
+                        <label>Yes</label>   
+                        <input type="radio" value="0" class="changeEmp" name="changeEmp">                
+                        <label>No</label>
+                </div>
+            </div>
+
+            <div class="inputField">
+            
+                <span>  Please enter if its a ammended petition ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type="radio" value="1" class="petition" name="petition">
+                        <label>Yes</label>   
+                        <input type="radio" value="0" class="petition" name="petition">                
+                        <label>No</label>
+                </div>
+            </div>
+
+            <div class="inputField">
+            
+                <span> Is an agent representing an employer ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type = "radio" value = "1" class="agent" name="agent">
+                    <label> Yes</label>
+                    <input type="radio" value = "0" class="agent" name="agent">
+                    <label>No</label>
+                </div>
+            </div>
+
+            <div class="inputField">
+            
+                <span> Secondary Entity ?</span>
+                    <div data-tooltip="Some info" class="checkboxes">
+                        <input type = "radio" value = "1" class="entity" name="entity">
+                        <label> Yes</label>
+                        <input type="radio" value = "0" class="entity" name="entity">
+                        <label>No</label>
+                </div>
+            </div>
             <p>
                 Please enter your Employer Name :
                 <input type="text" id="employer">
