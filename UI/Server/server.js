@@ -111,8 +111,12 @@ app.get('/server', function(req, response) {
   });
 
   //login page
-  app.get('/',function(req,response){
+  app.get('/login',function(req,response){
     response.render('login');
+  })
+
+  app.get('/',function(req,response){
+    response.render('information');
   })
 
   app.get('/selection',function(req,response){

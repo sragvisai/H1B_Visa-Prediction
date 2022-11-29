@@ -1,0 +1,135 @@
+.body{
+    width : 100%;
+    height  : 100%;
+    background-color: #dbf3f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+}
+
+.headerBox {
+    width : 80%;
+    height : 10%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.infoBox {
+    width: 100%;
+    
+}
+
+#header{
+    padding-top: 10px;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #033ec3;
+    text-align: center;
+}
+
+.first{
+    height: 40%;
+    background-color:#b2beff;
+    border: none;
+    border-radius: 41px;
+    margin-left: 3%;
+    margin-right: 5%;
+
+}
+
+.second{
+    height: 40%;
+    background-color:#7fd3ed;
+    border: none;
+    border-radius: 41px;
+    margin-left: 3%;
+    margin-right: 5%;
+}
+
+.packs{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pack1{
+    height: 100%;
+    width:25%;
+    order : 1;
+    border: black solid 1px;
+    margin-right: 2%;
+    border-radius: 21px;
+}
+
+.pack2{
+    height : 100%;
+    width: 25%;
+    order: 2;
+    border: black solid 1px;
+    border-radius: 21px;
+    margin-right: 2%;
+}
+
+.pack3{
+    height: 80%;
+    width : 25%;
+    order: 3;
+    border: black solid 1px;
+    border-radius: 21px;
+    margin-right: 2%;
+}
+
+.centerP{
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.stuff p{
+    padding: 20px;
+    font-size: large;
+}
+
+.third{
+    margin-left: 3%;
+    margin-right: 5%;
+    border: none;
+    border-radius: 41px;
+    background-color: #b2beff;
+    height: 40%;
+}
+
+.four{
+    margin-left: 3%;
+    margin-right: 5%;
+    border: none;
+    border-radius: 41px;
+    background-color:#7fd3ed;
+    height: 40%;
+}
+
+.predictBox button{
+    width: 80%;
+    margin-left: 7%;
+    margin-right: 5%;
+    border: none;
+    border-radius: 20px;
+    background-color:rgb(84, 105, 212);
+    cursor: grab;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    font-size: larger;
+    justify-content: center;
+}
+.predictBox a{
+    color: white;
+}
