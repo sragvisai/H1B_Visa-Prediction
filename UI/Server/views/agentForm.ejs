@@ -3,6 +3,9 @@
         <link href="agentStyle.css" rel="stylesheet">
     </head>
     <body>
+        <div class="headerBox">
+            <h3>AGENT FORM</h3>
+        </div>
         <div class="container">
 
         
@@ -10,10 +13,12 @@
 
         <div class="inputField">
             
-            <span> Please enter your role :</span>
+            <span class="floatLeft"> Please enter your role :</span>
                 <div data-tooltip="Some info">
-                <input type="text" id="Role" placeholder="Your role..">
+                    <span class="moreInfo"> ? </span>
+                
             </div>
+            <input type="text" id="Role" placeholder="Your role.." class="checkboxes">
         </div>
             <!-- <p>
                 Is it a full time position ?
@@ -25,83 +30,112 @@
 
             <div class="inputField">
             
-                <span> Enter the total number of worker positions</span>
-                    <div data-tooltip="Some info">
-                        <input type="text" id="workerPositions">
+                <span class="floatLeft"> Enter the total number of worker positions</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    
+                <input type="text" id="workerPositions" class="checkboxes" placeholder="..">
+                
+                
+            </div>
+
+            <div class="inputField">
+            
+                <span class="floatLeft">  Is it a new Emplpoyemnt ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type="radio" value="1" id="newEmpYes" class="newEmp">
+                    <label for="newEmpYes">Yes</label>   
+                    <input type="radio" value="0" id="newEmpNo" class="newEmp">                
+                    <label for="newEmpNo">No</label>
                 </div>
             </div>
 
             <div class="inputField">
             
-                <span>  Is it a new Emplpoyemnt ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1" id="newEmpYes" class="newEmp">
-                        <label for="newEmpYes">Yes</label>   
-                        <input type="radio" value="0" id="newEmpNo" class="newEmp">                
-                        <label for="newEmpNo">No</label>
+                <span class="floatLeft">  Please enter if its a continue Emplpoyemnt ? </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type="radio" value="1"  class="continueEmp" name="continue">
+                    <label for="conYes">Yes</label>   
+                    <input type="radio" value="0" class="continueEmp" name="continue">                
+                    <label for="conNo">No</label>
                 </div>
             </div>
 
             <div class="inputField">
             
-                <span>  Please enter if its a continue Emplpoyemnt ? </span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1"  class="continueEmp" name="continue">
-                        <label for="conYes">Yes</label>   
-                        <input type="radio" value="0" class="continueEmp" name="continue">                
-                        <label for="conNo">No</label>
+                <span class="floatLeft">  Please enter if its a change of previous emplpoyemnt ? </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
-            </div>
-
-            <div class="inputField">
-            
-                <span>  Please enter if its a change of previous emplpoyemnt ? </span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1"  class="change" name="change">
+                <div class="checkboxes">
+                    <input type="radio" value="1"  class="change" name="change">
                         <label>Yes</label>   
                         <input type="radio" value="0"  class="change" name="change">                
                         <label>No</label>
                 </div>
+                        
             </div>
 
             <div class="inputField">
             
-                <span>   Please enter if its a new concurrent employement ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1" class="concurrentEmp" name="concurrent">
+                <span class="floatLeft">   Please enter if its a new concurrent employement ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type="radio" value="1" class="concurrentEmp" name="concurrent">
                         <label>Yes</label>   
                         <input type="radio" value="0" class="concurrentEmp" name="concurrent">                
                         <label>No</label>
                 </div>
+                        
             </div>
 
             <div class="inputField">
             
-                <span>   Please enter if its a change of employer ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1" class="changeEmp" name="changeEmp">
+                <span class="floatLeft">   Please enter if its a change of employer ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type="radio" value="1" class="changeEmp" name="changeEmp">
                         <label>Yes</label>   
                         <input type="radio" value="0" class="changeEmp" name="changeEmp">                
                         <label>No</label>
                 </div>
+                        
             </div>
 
             <div class="inputField">
             
-                <span>  Please enter if its a ammended petition ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="radio" value="1" class="petition" name="petition">
-                        <label>Yes</label>   
-                        <input type="radio" value="0" class="petition" name="petition">                
-                        <label>No</label>
+                <span class="floatLeft">  Please enter if its a ammended petition ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                <div class="checkboxes">
+                    <input type="radio" value="1" class="petition" name="petition">
+                    <label>Yes</label>   
+                    <input type="radio" value="0" class="petition" name="petition">                
+                    <label>No</label>
+                </div>
+                       
             </div>
 
             <div class="inputField">
             
-                <span> Is an agent representing an employer ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type = "radio" value = "1" class="agent" name="agent">
+                <span class="floatLeft"> Is an agent representing an employer ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type = "radio" value = "1" class="agent" name="agent">
                     <label> Yes</label>
                     <input type="radio" value = "0" class="agent" name="agent">
                     <label>No</label>
@@ -110,67 +144,80 @@
 
             <div class="inputField">
             
-                <span> Secondary Entity ?</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type = "radio" value = "1" class="entity" name="entity">
+                <span class="floatLeft"> Secondary Entity ?</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type = "radio" value = "1" class="entity" name="entity">
                         <label> Yes</label>
                         <input type="radio" value = "0" class="entity" name="entity">
                         <label>No</label>
                 </div>
+                        
             </div>
 
             <div class="inputField">
-            
-                <span>  Please enter your Employer Name :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="employer">
+                <span class="floatLeft">  Please enter your Employer Name :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                <input type="text" id="employer" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span>Enter your salary</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="salary">
+                <span class="floatLeft">Enter your salary</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                <input type="text" id="salary" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span>Enter your salary unit of pay</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="salaryUnit">
+                <span class="floatLeft">Enter your salary unit of pay</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                <input type="text" id="salaryUnit" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span>Enter the Prevailing wage :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="prevailing">
+                <span class="floatLeft">Enter the Prevailing wage :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                  
+                <input type="text" id="prevailing" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span> Enter the prevailing unit of pay :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="worksiteLocations">
+                <span class="floatLeft"> Enter the prevailing unit of pay :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                        <input type="text" id="worksiteLocations" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span> Total Worksite Locations :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
-                        <input type="text" id="prevailingUnit">
+                <span class="floatLeft"> Total Worksite Locations :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
                 </div>
+                <input type="text" id="prevailingUnit" class="checkboxes">
             </div>
 
             <div class="inputField">
             
-                <span>Do you agree to LC statement :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
+                <span class="floatLeft">Do you agree to LC statement :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    <div class="checkboxes">
                         <input type="radio" class="lc" name="lc" value="Yes">
                         <label>Yes</label>
                         <input type="radio" class="lc" name="lc" value="No">
@@ -180,8 +227,11 @@
 
             <div class="inputField">
             
-                <span>Do you have h1b_dependent</span>
-                    <div data-tooltip="Some info" class="checkboxes">
+                <span class="floatLeft">Do you have h1b_dependent</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    <div class="checkboxes">
                         <input type = "radio" class="h1b_dep" name="h1b_dep" value="Yes">
                 <label>Yes</label>
                 <input type = "radio" class="h1b_dep" name="h1b_dep" value="No">
@@ -191,8 +241,11 @@
 
             <div class="inputField">
             
-                <span>Are you a willful violator</span>
-                    <div data-tooltip="Some info" class="checkboxes">
+                <span class="floatLeft">Are you a willful violator</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    <div class="checkboxes">
                         <input type = "radio" class="violator" name="violator" value="Yes">
                         <label>Yes</label>
                         <input type = "radio" class="violator" name="violator" value="No">
@@ -202,8 +255,11 @@
 
             <div class="inputField">
             
-                <span>Support H1-B</span>
-                    <div data-tooltip="Some info" class="checkboxes">
+                <span class="floatLeft">Support H1-B</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    <div class="checkboxes">
                         <input type = "radio" class="suport" name="support" value="Yes">
                 <label>Yes</label>
                 <input type = "radio" class="support" name="support" value="No">
@@ -213,8 +269,11 @@
 
             <div class="inputField">
             
-                <span>  Satutory Basis :</span>
-                    <div data-tooltip="Some info" class="checkboxes">
+                <span class="floatLeft">  Satutory Basis :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                    <div class="checkboxes">
                         <input type="text" id="basis">
                 </div>
             </div>
