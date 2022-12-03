@@ -4,6 +4,10 @@ import json
 import numpy as np
 
 app = FastAPI()
+BLACKLISTEDCOMPANIES = ['Broadgate, Inc.','Spate Business Solutions, LLC','Cloudpoint Systems, Inc','Open Access Technology International, Inc.','Invensys, Inc']
+
+BLACKLISTEDCOUNTRIES = ['Eritrea','Iran','Kyrgyzstan','Libya','Myanmar','Nigeria','North Korea','Somalia','Sudan','Syria',
+'Tanzania','Venezuela','Yemen']
 
 @app.get("/my-first-api")
 def apiFunction():
@@ -25,6 +29,15 @@ def returnCompanies():
 async def predict(input_data : str):
     print("Input data ",input_data)
     inputData = input_data.split(",")
+    if len(inputData) == 5:
+        if inputData[1] in BLACKLISTEDCOMPANIES:
+            return json.dumps({"outcome" : "Denied"})
+        elif inputData[2] < inputData[3]:
+            return json.dumps({"outcome" : "Denied"})
+        elif inputData[4] in BLACKLISTEDCOUNTRIES:
+            return json.dumps({"outcome" : "Denied"})
+        else:
+            return json.dumps({"outcome" : "Approved"})
     with open('model2.pickle', 'rb') as f:
         model = pickle.load(f)
     with open('encoder2.pickle', 'rb') as f:
