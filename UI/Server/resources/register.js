@@ -13,6 +13,11 @@ const backToLogin  = () =>{
 
 }
 
+const displaySelection = () =>{
+    var url = new URL("http://localhost:9000/selection");
+    window.location.href = url;
+}
+
 const addUser = () =>{
 
     let userName = document.getElementById("usernameR").value;

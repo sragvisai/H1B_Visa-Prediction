@@ -8,8 +8,39 @@
 .container{
     width: 70%;
     margin: auto;
+    height: 90%;
 }
 
+.headerMenu {
+    width : 100%;
+    background-color:#7fd3ed;
+    height: 10%;
+    display: flex;
+}
+
+.menuItems {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+}
+
+#menu1{
+    padding-right: 10%;
+    order: 1;
+    padding-top: 33px;
+}
+
+#menu2{
+    padding-right:10%;
+    order : 2;
+    padding-top: 33px;
+}
+#menu3{
+    padding-right:10%;
+    order: 3;
+    padding-top: 33px;
+}
 .headerBox {
     width : 80%;
     height : 10%;
@@ -31,6 +62,7 @@
     font-weight: 500;
     color: #033ec3;
     text-align: center;
+    width: 50%;
 }
 
 .first{

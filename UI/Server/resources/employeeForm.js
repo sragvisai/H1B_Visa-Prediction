@@ -1,10 +1,3 @@
-console.log("Here");
-// const processData = () =>{
-
-//     //perform static checks based on the conuntry of citizenships
-    
-// }
-
 var handleSubmit = function () {
     console.log("Form submitted");
     let inputData = [];
