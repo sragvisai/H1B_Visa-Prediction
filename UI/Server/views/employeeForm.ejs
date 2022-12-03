@@ -1,41 +1,77 @@
 <html>
+    <head>
+        <link href="employeeStyles.css" rel="stylesheet">
+    </head>
+
     <body>
+        <div class="headerBox">
+            <h3>EMPLOYEE FORM</h3>
+        </div>
+
+        <div class="container">
         <form id="employeeForm" onsubmit="handleSubmit()">
-            <p>
-                Please enter your role :
+            <div class="inputData">
+                <span class="floatLeft"> Please enter your role : </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
                 <input type = "text" id="role">
-            </p>
+            </div>
             
-            <p>
-                Please enter your Employer's organization
+                
+            
+            <div class="inputData">
+                <span class="floatLeft"> Please enter your Employer's organization  </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
                 <input type ="text" id="empName">
-            </p>
-
-            <p>
-                Please enter your salary :
+            </div>
+           
+            <div class="inputData">
+                <span class="floatLeft">
+                    Please enter your salary :
+                </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
                 <input type ="text" id="salry">
-            </p>
+            </div>
 
-            <p>
-                Please enter prevailing wage (based on your research):
-                <input type ="text" id ="prevWage">
-            </p>
+            <div class="inputData">
+                <span class="floatLeft">
+                    Please enter prevailing wage (based on your research):
+                </span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+               
+                <input type="text" id="prevWage">
+            </div>
 
-            <p>
-                Please enter your country of citizenship :
-                <input type="text" id="country">
-            </p>
-            
+            <div class="inputData">
+                <span class="floatLeft"> Please enter your country of citizenship :</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <input type="text" id="country" class="checkboxes">
+            </div>
+
             <p>
                 <input type="submit">
             </p>
-          
+            
+            <a href="/selection">
+                <button id="back">BACK</button>
+            </a>
 
         </form>
 
         <p id="outcome">
 
         </p>
+
+    </div>
 
         <script src="employeeForm.js"></script>
     </body>
