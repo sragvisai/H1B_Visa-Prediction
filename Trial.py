@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import pickle
 import json
 import numpy as np
+from iso3166 import countries
 
 app = FastAPI()
 BLACKLISTEDCOMPANIES = ['Broadgate, Inc.','Spate Business Solutions, LLC','Cloudpoint Systems, Inc','Open Access Technology International, Inc.','Invensys, Inc']
@@ -29,11 +30,23 @@ def returnCompanies():
 async def predict(input_data : str):
     print("Input data ",input_data)
     inputData = input_data.split(",")
+    import pdb; pdb.set_trace()
     if len(inputData) == 5:
-        if inputData[1] in BLACKLISTEDCOMPANIES:
+        if inputData[0]:
+            with open('role_names.txt') as myfile:
+                if inputData[0] not in myfile.read():
+                    return json.dumps({"outcome" : "Denied"})
+        if inputData[1]:
+            with open('firm_names.txt') as myfile:
+                if inputData[1] not in myfile.read():
+                    return json.dumps({"outcome" : "Denied"})
+        elif inputData[1] in BLACKLISTEDCOMPANIES:
             return json.dumps({"outcome" : "Denied"})
         elif inputData[2] < inputData[3]:
             return json.dumps({"outcome" : "Denied"})
+        elif inputData[4]:
+            if inputData[4] not in countries:
+                return json.dumps({"outcome" : "Denied"})
         elif inputData[4] in BLACKLISTEDCOUNTRIES:
             return json.dumps({"outcome" : "Denied"})
         else:
