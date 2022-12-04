@@ -1,7 +1,7 @@
 
 import fetch from "node-fetch";
 import express from 'express';
-
+import CryptoJS from "crypto-js";
 //mongoDB realted stuff
 import { MongoClient, ServerApiVersion } from 'mongodb';
 //import { MongoClient } from 'mongodb';
@@ -10,6 +10,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 
 const app = express();
+const crypto = CryptoJS;
 // View engine setup
 app.set('view engine', 'ejs');
 app.use(express.static('resources'));
@@ -42,13 +43,16 @@ app.get('/server', function(req, response) {
     params = params.split(',');
     let userName = params[0];
     let password = params[1];
-    let existingUsers = [];
+    let encryptedUserName = crypto.AES.encrypt(userName, userName).toString();
+    let encryptedPassword = crypto.AES.encrypt(password, userName).toString();
+    
     console.log("Inside the validateUser server "+JSON.stringify(params));
     client.connect(err => {
         const collection = client.db("LoginCreds").collection("Users");
         
         //check if user exists
         collection.distinct('userName').then((data) => {
+            console.log("Data from db "+data);
             if(data.includes(userName)){
                 collection.findOne({userName : userName})
             .then((data) =>{
@@ -75,6 +79,8 @@ app.get('/server', function(req, response) {
         params = params.split(',');
         let userName = params[0];
         let password = params[1];
+        let encryptedUserName = crypto.AES.encrypt(userName, userName).toString();
+        let encryptedPassword = crypto.AES.encrypt(password, userName).toString();
         console.log("Inside the addUser server "+userName+" "+password);
         client.connect(err => {
             const connection = client.db("LoginCreds").collection("Users");
@@ -117,6 +123,7 @@ app.get('/server', function(req, response) {
 
   app.get('/',function(req,response){
     response.render('information');
+    //
   })
 
   app.get('/selection',function(req,response){
@@ -126,6 +133,10 @@ app.get('/server', function(req, response) {
   app.get('/register',function(req,response){
     response.render('register');
   });
+
+  app.get('/references',function(req,response){
+    response.render('references');
+  })
 
   
 

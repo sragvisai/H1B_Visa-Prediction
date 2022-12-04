@@ -28,11 +28,11 @@ def returnCompanies():
 
 @app.get("/")
 async def predict(input_data : str):
-    print("Input data ",input_data)
+    print("Input data ",input_data) 
     inputData = input_data[1:]
     inputData = inputData[:-1]
     inputData = inputData.split(",")
-    if len(inputData) == 5:
+    if len(inputData) == 6:
         if inputData[0]:
             with open('role_names.txt') as myfile:
                 if inputData[0] not in myfile.read():
@@ -42,31 +42,41 @@ async def predict(input_data : str):
                 if inputData[1] not in myfile.read():
                     return json.dumps({"outcome" : "Denied"})
         if inputData[1] in BLACKLISTEDCOMPANIES:
-            return json.dumps({"outcome" : "Denied"})
+            return json.dumps({"outcome" : "Denied-B"})
         if int(inputData[2]) < int(inputData[3]):
-            return json.dumps({"outcome" : "Denied"})
-        if inputData[4]:
-            if inputData[4] not in countries:
-                return json.dumps({"outcome" : "Denied"})
-        if inputData[4] in BLACKLISTEDCOUNTRIES:
-            return json.dumps({"outcome" : "Denied"})
+            return json.dumps({"outcome" : "Denied-S"})
+        if inputData[4] in BLACKLISTEDCOUNTRIES or inputData[4] not in countries:
+            return json.dumps({"outcome" : "Denied-C"})
+        if inputData[5] != "Yes":
+            return json.dumps({"outcome" : "Denied-E"})
         else:
             return json.dumps({"outcome" : "Approved"})
-    with open('model2.pickle', 'rb') as f:
-        model = pickle.load(f)
-    with open('encoder2.pickle', 'rb') as f:
-        encoder = pickle.load(f)
 
-    # inputData = ['Software Developer','1','1','0','0','0','0','Google LLC','Yes','Yes','120000','Year','100000','Year','10','Yes','Yes','$60,000 or higher annual wage']
+    try:
+         
+        with open('model2.pickle', 'rb') as f:
+            model = pickle.load(f)
+        with open('encoder2.pickle', 'rb') as f:
+            encoder = pickle.load(f)
+        #10 & 12
+        if int(inputData[10]) < int(inputData[11]):
+            return json.dumps({"outcome" : "Denied-S"})
+        # inputData = ['Software Developer','1','1','0','0','0','0','Google LLC','Yes','Yes','120000','Year','100000','Year','10','Yes','Yes','$60,000 or higher annual wage']
+        print("Actual Data "+inputData)
+        
+        inputData= np.asarray(inputData)
+        inputData = inputData.reshape(1,-1)
 
-    inputData= np.asarray(inputData)
-    inputData = inputData.reshape(1,-1)
+        inputData = encoder.transform(inputData)
+        
+        print("Reverse Encoding "+encoder.inverse_transform(inputData))
 
-    inputData = encoder.transform(inputData)
+        predictedOutcome = model.predict(inputData)
+        #print("Returning ",predictedOutcome)
+        return json.dumps({"outcome" : (str("replace"[0]))})
     
-    predictedOutcome = model.predict(inputData)
-    print("Returning ",predictedOutcome)
-    return json.dumps({"outcome" : (str(predictedOutcome[0]))})
+    except:
+        return json.dumps({"outcome":"ERROR"})
 
 def hello():
   return {"Hello world!"}

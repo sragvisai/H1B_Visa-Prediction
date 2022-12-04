@@ -5,6 +5,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.middle{
+    text-align: center;
+}
+
 .container{
     width: 70%;
     margin: auto;
@@ -66,8 +70,6 @@
 }
 
 .first{
-    height: 40%;
-    background-color:#b2beff;
     border: none;
     border-radius: 41px;
     margin-left: 3%;
@@ -76,8 +78,6 @@
 }
 
 .second{
-    height: 40%;
-    background-color:#7fd3ed;
     border: none;
     border-radius: 41px;
     margin-left: 3%;
@@ -94,7 +94,7 @@
 
 .pack1{
     height: 100%;
-    width:25%;
+    width:30%;
     order : 1;
     border: black solid 1px;
     margin-right: 2%;
@@ -103,7 +103,7 @@
 
 .pack2{
     height : 100%;
-    width: 25%;
+    width: 30%;
     order: 2;
     border: black solid 1px;
     border-radius: 21px;
@@ -112,7 +112,7 @@
 
 .pack3{
     height: 80%;
-    width : 25%;
+    width : 30%;
     order: 3;
     border: black solid 1px;
     border-radius: 21px;
@@ -135,8 +135,6 @@
     margin-right: 5%;
     border: none;
     border-radius: 41px;
-    background-color: #b2beff;
-    height: 40%;
 }
 
 .four{
@@ -144,8 +142,6 @@
     margin-right: 5%;
     border: none;
     border-radius: 41px;
-    background-color:#7fd3ed;
-    height: 40%;
 }
 
 .predictBox button{

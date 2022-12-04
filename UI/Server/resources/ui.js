@@ -1,10 +1,11 @@
 console.log("Here");
+let goAhead = 0;
 
 var handleSubmit = function () {
     console.log("Form submitted");
     let inputData = [];
 
-
+    try{
     var title = document.getElementById("Role").value;
     inputData.push(title);
     // var fullTime = document.querySelector('.fullTime:checked').value;
@@ -24,7 +25,7 @@ var handleSubmit = function () {
     inputData.push(document.getElementById('salary').value);
     inputData.push(document.getElementById('salaryUnit').value);
     inputData.push(document.getElementById('prevailing').value);
-    inputData.push(document.getElementById('prevailingUnit').value);
+    inputData.push(document.getElementById('salaryUnit').value);
     inputData.push(document.getElementById('worksiteLocations').value);
 
     //inputData.push(document.querySelector('.lc:checked').value);
@@ -33,33 +34,51 @@ var handleSubmit = function () {
 
     inputData.push(document.querySelector('.suport:checked').value);
     inputData.push(document.getElementById('basis').value);
+    goAhead = 1;
+    
+    }
+    catch{
+        alert("Please select/enter values for every field");
+    }
     
     console.log("fullTime "+inputData.length);
 
     //console.log("Server Connection"+number+" "+otp);
-    var url = new URL("http://localhost:9000/server");
-    url.search = new URLSearchParams({inputData : inputData });
-    url = url.toString();
-    console.log("URL "+url);
-    fetch(url,{
-        })
-    .then(response => response.json())
-    .then(data =>{
-        console.log(data);
-        console.log("Data "+JSON.stringify(data));
-        console.log("Type "+typeof(data));
-        data = JSON.parse(data);
-        let outcome = data["outcome"];
-
-        document.getElementById("agentForm").style.display = 'none';
-        document.getElementById("outcome").style.display = "block";
-        
-        if(outcome == "0"){
-            document.getElementById("outcome").innerHTML = "Approved";
+    if(goAhead == 1){
+        var url = new URL("http://localhost:9000/server");
+        url.search = new URLSearchParams({inputData : inputData });
+        url = url.toString();
+        console.log("URL "+url);
+        try{
+            fetch(url,{
+            })
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data);
+            console.log("Data "+JSON.stringify(data));
+            console.log("Type "+typeof(data));
+            data = JSON.parse(data);
+            let outcome = data["outcome"];
+    
+            document.getElementById("agentForm").style.display = 'none';
+            document.getElementById("outcome").style.display = "block";
+            
+            if(outcome == "0"){
+                document.getElementById("outcome").innerHTML = "Approved";
+            }
+            else if(outcome =="1")
+                document.getElementById("outcome").innerHTML = "Denied";
+            else{
+                alert("Internal server ERROR, please try again");
+            }
+        })      
         }
-        else
-            document.getElementById("outcome").innerHTML = "Denied";
-    })      
+        catch{
+            
+            alert("An internal server error has occured");
+        }
+    }
+   
 };
 
 var initializor = function () {

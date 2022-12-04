@@ -15,17 +15,15 @@
                 <div data-tooltip="Some info">
                     <span class="moreInfo"> ? </span>
                 </div>
-                <input type = "text" id="role">
+                <input type = "text" id="role" class="checkboxes">
             </div>
-            
-                
-            
+
             <div class="inputData">
                 <span class="floatLeft"> Please enter your Employer's organization  </span>
                 <div data-tooltip="Some info">
                     <span class="moreInfo"> ? </span>
                 </div>
-                <input type ="text" id="empName">
+                <input type ="text" id="empName" class="checkboxes">
             </div>
            
             <div class="inputData">
@@ -35,7 +33,7 @@
                 <div data-tooltip="Some info">
                     <span class="moreInfo"> ? </span>
                 </div>
-                <input type ="text" id="salry">
+                <input type ="text" id="salry" class="checkboxes">
             </div>
 
             <div class="inputData">
@@ -46,7 +44,7 @@
                     <span class="moreInfo"> ? </span>
                 </div>
                
-                <input type="text" id="prevWage">
+                <input type="text" id="prevWage" class="checkboxes">
             </div>
 
             <div class="inputData">
@@ -57,19 +55,31 @@
                 <input type="text" id="country" class="checkboxes">
             </div>
 
-            <p>
-                <input type="submit">
-            </p>
-            
-            <a href="/selection">
-                <button id="back">BACK</button>
-            </a>
-
+            <div class="inputData">
+                <span class="floatLeft">Do you have a minimum of or are you currently pursuing a Bacherlor's Degree</span>
+                <div data-tooltip="Some info">
+                    <span class="moreInfo"> ? </span>
+                </div>
+                <div class="checkboxes">
+                    <input type="radio" value="Yes"  class="degree" name="degree">
+                    <label for="newEmpYes">Yes</label>   
+                    <input type="radio" value="No" class="degree" name="degree">                
+                    <label for="newEmpNo">No</label>
+                </div>
+            </div>
+                
+            <input type="submit" value="Continue">
         </form>
 
         <p id="outcome">
 
         </p>
+                    
+        <a href="/selection">
+            <button id="back">BACK</button>
+        </a>
+
+     
 
     </div>
 
