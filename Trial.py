@@ -30,7 +30,6 @@ def returnCompanies():
 async def predict(input_data : str):
     print("Input data ",input_data)
     inputData = input_data.split(",")
-    import pdb; pdb.set_trace()
     if len(inputData) == 5:
         if inputData[0]:
             with open('role_names.txt') as myfile:
