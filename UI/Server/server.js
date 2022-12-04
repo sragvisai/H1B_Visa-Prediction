@@ -1,7 +1,7 @@
 
 import fetch from "node-fetch";
 import express from 'express';
-import CryptoJS from "crypto-js";
+
 //mongoDB realted stuff
 import { MongoClient, ServerApiVersion } from 'mongodb';
 //import { MongoClient } from 'mongodb';
@@ -10,7 +10,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 
 const app = express();
-const crypto = CryptoJS;
 // View engine setup
 app.set('view engine', 'ejs');
 app.use(express.static('resources'));
@@ -43,8 +42,6 @@ app.get('/server', function(req, response) {
     params = params.split(',');
     let userName = params[0];
     let password = params[1];
-    let encryptedUserName = crypto.AES.encrypt(userName, userName).toString();
-    let encryptedPassword = crypto.AES.encrypt(password, userName).toString();
     
     console.log("Inside the validateUser server "+JSON.stringify(params));
     client.connect(err => {
@@ -79,8 +76,7 @@ app.get('/server', function(req, response) {
         params = params.split(',');
         let userName = params[0];
         let password = params[1];
-        let encryptedUserName = crypto.AES.encrypt(userName, userName).toString();
-        let encryptedPassword = crypto.AES.encrypt(password, userName).toString();
+
         console.log("Inside the addUser server "+userName+" "+password);
         client.connect(err => {
             const connection = client.db("LoginCreds").collection("Users");

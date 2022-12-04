@@ -68,6 +68,8 @@ var handleSubmit = function () {
             }
             else if(outcome =="1")
                 document.getElementById("outcome").innerHTML = "Denied";
+            else if(outcome == "Denied-S")
+                document.getElementById("outcome").innerHTML = "Denied - Salary";
             else{
                 alert("Internal server ERROR, please try again");
             }
