@@ -29,7 +29,9 @@ def returnCompanies():
 @app.get("/")
 async def predict(input_data : str):
     print("Input data ",input_data)
-    inputData = input_data.split(",")
+    inputData = input_data[1:]
+    inputData = inputData[:-1]
+    inputData = inputData.split(",")
     if len(inputData) == 5:
         if inputData[0]:
             with open('role_names.txt') as myfile:
@@ -39,14 +41,14 @@ async def predict(input_data : str):
             with open('firm_names.txt') as myfile:
                 if inputData[1] not in myfile.read():
                     return json.dumps({"outcome" : "Denied"})
-        elif inputData[1] in BLACKLISTEDCOMPANIES:
+        if inputData[1] in BLACKLISTEDCOMPANIES:
             return json.dumps({"outcome" : "Denied"})
-        elif inputData[2] < inputData[3]:
+        if int(inputData[2]) < int(inputData[3]):
             return json.dumps({"outcome" : "Denied"})
-        elif inputData[4]:
+        if inputData[4]:
             if inputData[4] not in countries:
                 return json.dumps({"outcome" : "Denied"})
-        elif inputData[4] in BLACKLISTEDCOUNTRIES:
+        if inputData[4] in BLACKLISTEDCOUNTRIES:
             return json.dumps({"outcome" : "Denied"})
         else:
             return json.dumps({"outcome" : "Approved"})
