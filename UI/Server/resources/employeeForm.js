@@ -42,16 +42,23 @@ var handleSubmit = function () {
             document.getElementById("outcome").style.display = "block";
             
             if(outcome == "Approved"){
-                document.getElementById("outcome").innerHTML = "Approved";
+                document.getElementById("outcome").innerHTML = "Application is Approved";
             }
-            else if(outcome == "Denied-B") 
-                document.getElementById("outcome").innerHTML = "Denied - Company";
+            else if (outcome == "Denied-R")
+                document.getElementById("outcome").innerHTML = "Application is Denied as Role is not found";
+            else if(outcome == "Denied-F") 
+                document.getElementById("outcome").innerHTML = "Application is Denied as Employer is not found";
+            else if(outcome == "Denied-B")
+                document.getElementById("outcome").innerHTML = "Application is Denied as Employer is  Blacklisted";
             else if(outcome == "Denied-C")
-                document.getElementById("outcome").innerHTML = "Denied - Country";
+                document.getElementById("outcome").innerHTML = "Application is Denied as Country is not found";
+            else if(outcome == "Denied-CB")
+                document.getElementById("outcome").innerHTML = "Application is Denied as Country is Blacklisted";
             else if(outcome == "Denied-E")
-                document.getElementById("outcome").innerHTML = "Denied - Education";
+                document.getElementById("outcome").innerHTML = "Application is Denied as applicant doesnot have minimum qualification";
             else if(outcome == "Denied-S")
-                document.getElementById("outcome").innerHTML = "Denied - Salary";
+                document.getElementById("outcome").innerHTML = "Application is Denied as salary is less than prevailing wage";
+            
     })      
     }
     catch{
